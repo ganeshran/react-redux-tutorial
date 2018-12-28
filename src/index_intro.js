@@ -3,16 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
-import reducerA from './react-redux/store/reducerA';
-import reducerB from './react-redux/store/reducerB';
+import { createStore } from 'redux';
+import reducer from './react-redux/store/reducer';
 
-const rootReducer = combineReducers({
-	rA: reducerA,
-	rB: reducerB,
-});
-
-const store = createStore(rootReducer,
+const store = createStore(reducer,
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
