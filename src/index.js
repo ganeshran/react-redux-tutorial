@@ -4,13 +4,7 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import reducerA from './react-redux/store/reducerA';
-import reducerB from './react-redux/store/reducerB';
-
-const rootReducer = combineReducers({
-	rA: reducerA,
-	rB: reducerB,
-});
+import reducer from './react-redux/store/reducers/reducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -24,7 +18,7 @@ const logAction = (store) => {
 	}
 }
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logAction)));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(logAction)));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
