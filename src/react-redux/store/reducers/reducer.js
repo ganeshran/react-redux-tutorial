@@ -9,14 +9,22 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				age: state.age + action.value,
+				loading: false,
 				history: state.history.concat({id: Math.random(), age:state.age + action.value})
 			};
 		case "AGE_DOWN":
 			return {
 				...state,
 				age: state.age - action.value,
+				loading: false,
 				history: state.history.concat({id: Math.random(), age:state.age - action.value})
 			};
+		case "LOADING":
+			return {
+				...state,
+				loading: true,
+			};
+
 		case "DEL_ITEM":
 			return {
 				...state,
