@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
-//import MyComp from './components/myComp';
 
-export default () => {
-	const [age, setAge] = useState(21);
-	const [name, setName] = useState('Ganesh');
-	return (
-		<div className="App">
-			<header className="App-header">
-				<div>
-					<p>Name: <input type="text" value={name}></input></p>
-					<p>Age: {age}</p>
-					<button>Increment Age by One</button>
-				</div>
-			</header>
-		</div>
-	);
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+      </div>
+    );
+  }
 }
+
+export default App;
